@@ -62,11 +62,10 @@ def cmd_report(args) -> None:
 
 
 def cmd_sample(args) -> None:
-    """Write the committed sample: aggregated sentiment (no text) and prices."""
-    daily, px = _load(False)
+    """Write the committed sample: aggregated sentiment only (no headline text, no prices)."""
+    daily, _ = _load(False)
     C.SAMPLE_DIR.mkdir(exist_ok=True)
     daily.to_parquet(C.SAMPLE_DIR / "sentiment_daily.parquet", compression="zstd")
-    px.round(4).to_parquet(C.SAMPLE_DIR / "prices.parquet", compression="zstd")
     print("sample written")
 
 

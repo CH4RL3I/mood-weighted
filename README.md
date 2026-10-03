@@ -100,10 +100,11 @@ returns.
   Publishers are mostly Seeking Alpha (45%), Zacks (23%), GuruFocus (14%) and Investor's Business Daily (13%).
   There are about 24 headlines per stock per month (median 21).
 * **Prices:** daily adjusted closes from Yahoo Finance through `yfinance` (Stooq now sits behind a
-  JavaScript check and cannot be fetched from a script). The committed sample contains these closes so the
-  figures reproduce offline. Yahoo's terms are for personal use, so treat them accordingly.
-* **Sample:** `sample/` (about 0.6 MB) holds the per-stock-per-day sentiment aggregates and prices.
-  `sentport backtest --sample` and `sentport report --sample` reproduce all figures without any download.
+  JavaScript check and cannot be fetched from a script). Prices are not redistributed here, since
+  Yahoo's terms are for personal use; they are downloaded and cached in `data/` on first use.
+* **Sample:** `sample/` holds the per-stock-per-day sentiment aggregates (no headline text).
+  `sentport backtest --sample` and `sentport report --sample` reproduce all figures from it, fetching
+  only the prices, so the FinBERT scoring never has to be rerun.
 
 ## Usage
 

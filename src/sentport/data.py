@@ -56,6 +56,8 @@ def fetch_prices(force: bool = False) -> pd.DataFrame:
 
 
 def load_sample() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Committed processed sample: (daily sentiment aggregates, prices)."""
-    return (pd.read_parquet(C.SAMPLE_DIR / "sentiment_daily.parquet"),
-            pd.read_parquet(C.SAMPLE_DIR / "prices.parquet"))  # fmt: skip
+    """Committed sentiment aggregates plus prices fetched (and cached) locally.
+
+    Prices are not redistributed (Yahoo's terms), so the first call downloads them.
+    """
+    return pd.read_parquet(C.SAMPLE_DIR / "sentiment_daily.parquet"), fetch_prices()
