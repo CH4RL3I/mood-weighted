@@ -2,7 +2,7 @@
 
 News sentiment as Black-Litterman views, tested out of sample against honest baselines.
 
-[![ci](https://github.com/CH4RL3I/mood-weighted/actions/workflows/ci.yml/badge.svg)](https://github.com/CH4RL3I/mood-weighted/actions/workflows/ci.yml)
+[![ci](https://github.com/CH4RL3I/mood-weighted/actions/workflows/ci.yml/badge.svg)](https://github.com/CH4RL3I/mood-weighted/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.11%2B-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 The Python package is called `sentport`. The question is simple: if you score financial headlines with
 FinBERT and feed the result into a portfolio optimiser as views, do you get a better portfolio than
